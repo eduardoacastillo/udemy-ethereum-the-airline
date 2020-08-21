@@ -1,12 +1,17 @@
 import React, { Component } from "react";
 import Panel from "./Panel";
+import getweb3 from "./getWeb3";
+
 
 export class App extends Component {
 
     constructor(props) {
         super(props);
     }
-
+    async ComponentDidMount() {
+        this.web3 = await getWeb3();
+        console.log(this.web3.version);
+    }
     render() {
         return <React.Fragment>
             <div className="jumbotron">
